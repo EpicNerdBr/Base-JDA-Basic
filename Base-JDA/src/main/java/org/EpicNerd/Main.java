@@ -23,7 +23,7 @@ public class Main {
 
         commandManager commandManager = new commandManager(); // Adicionando CommandManager
 
-        builder.addEventListeners(new BotJoinListener(), new MyEventListener(), new ListenerAdapter() {
+        builder.addEventListeners(new BotJoinListener(), new ListenerAdapter() {
             @Override
             public void onMessageReceived(MessageReceivedEvent event) {
                 if (event.getAuthor().isBot()) return;
