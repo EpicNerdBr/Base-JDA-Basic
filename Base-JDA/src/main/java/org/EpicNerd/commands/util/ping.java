@@ -17,6 +17,13 @@ public class ping implements command {
 
     @Override
     public void execute(MessageReceivedEvent event) {
-        event.getChannel().sendMessage("Pong").queue();
+        long gatewayPing = event.getJDA().getGatewayPing();
+        long apiPing = event.getJDA().getRestPing().complete();
+
+        String message = ":ping_pong: **|** **Pong!**\n" +
+                         ":stopwatch: **|** **Gateway Ping:** `" + gatewayPing + "ms`\n" +
+                         ":zap: **|** **API Ping:** `" + apiPing + "ms`";
+
+        event.getMessage().reply(message).queue();
     }
 }
