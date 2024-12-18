@@ -12,11 +12,11 @@ public class ping implements command {
 
     @Override
     public String[] getAliases() {
-        return new String[] {"pong", "pinga"};
+        return new String[] {"pong"};
     }
 
     @Override
     public void execute(MessageReceivedEvent event) {
-        event.getChannel().sendMessage("Pong! kkk").queue();
+        event.getChannel().sendMessage("Pong").queue();
     }
 }
