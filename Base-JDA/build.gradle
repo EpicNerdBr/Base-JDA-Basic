@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.EpicNerd'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'net.dv8tion:JDA:5.2.1'
+    implementation 'io.github.cdimascio:java-dotenv:5.2.2'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.3'
+    implementation 'org.json:json:20210307'
+}
+
+test {
+    useJUnitPlatform()
+}
