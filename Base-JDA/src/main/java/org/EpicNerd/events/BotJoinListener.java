@@ -25,7 +25,7 @@ public class BotJoinListener extends ListenerAdapter {
                 .findFirst()
                 .ifPresent(channel -> {
                     sendSticker(channel.getId(), "1318070862670205029", () -> {
-                        RestAction<?> messageAction = channel.sendMessage("<a:hello_wave:1318033415374766100> Cheguei! Toc, toc! Tem alguém aí? ʕ•́ᴥ•̀ʔっ Ah, quase me esquecendo, obrigado por me adicionar! ≧◠ᴥ◠≦");
+                        RestAction<?> messageAction = channel.sendMessage("Cheguei! Toc, toc! Tem alguém aí? ʕ•́ᴥ•̀ʔっ Ah, quase me esquecendo, obrigado por me adicionar! ≧◠ᴥ◠≦");
 
                         messageAction.queue(message -> {
                             scheduler.schedule(() -> message.delete().queue(), 5, TimeUnit.MINUTES);
