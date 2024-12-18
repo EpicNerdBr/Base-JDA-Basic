@@ -1,0 +1,26 @@
+name: Notify Discord
+
+on:
+  push:
+    branches:
+      - main
+  issues:
+    types: [opened, closed, reopened]
+  pull_request:
+    types: [opened, closed, reopened]
+  release:
+    types: [published]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Send notification to Discord
+      env:
+        DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+      run: |
+        curl -H "Content-Type: application/json" \
+             -X POST \
+             -d "{\"content\": \"Novo evento no repositório: ${GITHUB_EVENT_NAME}\"}" \
+             $DISCORD_WEBHOOK_URL
