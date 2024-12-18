@@ -19,7 +19,7 @@ public class Main {
         JDABuilder builder = JDABuilder.createDefault(token)
                 .enableIntents(GatewayIntent.GUILD_MESSAGES, GatewayIntent.MESSAGE_CONTENT)
                 .disableCache(CacheFlag.ACTIVITY)
-                .setActivity(Activity.playing("estou aqui!"));
+                .setActivity(Activity.playing("Minecraft"));
 
         commandManager commandManager = new commandManager(); // Adicionando CommandManager
 
